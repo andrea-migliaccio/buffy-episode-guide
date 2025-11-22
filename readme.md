@@ -82,29 +82,27 @@ A new folder, likely `angel/`, will be added once Buffy data is complete.
 
 ## 🤝 How to Contribute
 
-We welcome contributions!  
-Follow these guidelines to keep the project clean, consistent, and constructive.
+We welcome contributions from the community!
 
-### 1. Contribution Rules
+Below are the essential guidelines — for full details, please refer to  
+👉 **[CONTRIBUTING.md](CONTRIBUTING.md)**
 
-- Ensure your edits respect the **Markdown structure** used for all season files.
-- Keep episode descriptions **short** (1–2 lines).
-- Maintain consistent use of the four importance levels:
-  - `FONDAMENTAL`
-  - `IMPORTANT`
-  - `DISPENSABLE`
-  - `FILLER`
-- Avoid subjective or emotional wording:
-  - Focus on relevance to lore and plot, not on personal taste.
-- No insults, hate speech, or unrelated content.
+### 1. Contribution Rules (Short Version)
+
+- Follow the Markdown structure used in season files.  
+- Episode descriptions must remain **short** (1–2 lines).  
+- Use only the four approved importance levels:
+  - `FONDAMENTAL`, `IMPORTANT`, `DISPENSABLE`, `FILLER`
+- Keep wording neutral and avoid subjective judgments.
+- No insults, hate speech, or irrelevant content.
 
 ### 2. Changing an Episode’s Importance Level
 
-Because episode importance can be subjective, any PR modifying an importance level will:
+Because importance ratings can be subjective:
 
-- Automatically be marked as **“discussion needed”**.
-- Require at least **two approvals** before merging.
-- (Future) Be screened by an **AI validation workflow** that checks the PR is respectful and on-topic.
+- Such PRs require **discussion** and at least **two approvals**.  
+- A justification must be included in the PR description.  
+- (Future) An AI-based workflow will help validate respectful, on-topic proposals.
 
 ### 3. Opening a Pull Request
 
@@ -114,7 +112,7 @@ Because episode importance can be subjective, any PR modifying an importance lev
 4. Open a PR using the provided template.  
 5. Wait for human review and automated checks.
 
-PR template: `.github/pull_request_template.md`
+➡️ For detailed rules (branch naming, formatting, examples, governance), see **CONTRIBUTING.md**.
 
 ---
 
