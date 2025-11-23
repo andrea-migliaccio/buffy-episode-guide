@@ -144,17 +144,23 @@ Analyze ONLY those contents.
 
 def call_openai(prompt: str):
     """
-    Chiama OpenAI Responses API con output JSON.
+    Chiama OpenAI Responses API e si aspetta come output
+    una stringa JSON valida, secondo le istruzioni nel prompt.
     """
     response = client.responses.create(
         model="gpt-5.1-mini",
         input=prompt,
-        response_format={"type": "json_object"},
     )
-    # response.output_text contiene tutto il testo generato
-    text = response.output_text
-    return json.loads(text)
+    text = response.output_text.strip()
 
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        # Se il modello non rispetta il formato JSON,
+        # falliamo la CI per sicurezza.
+        print("Model did not return valid JSON:")
+        print(text)
+        raise
 
 def main():
     changed_files = get_changed_files()
