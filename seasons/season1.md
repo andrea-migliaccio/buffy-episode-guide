@@ -17,7 +17,7 @@ Season 1 is short (mid-season replacement) and heavily focused on setting up the
 
 | Code | Title | Importance | Description |
 |------|--------|------------|-------------|
-| **S01E01** | *Welcome to the Hellmouth* | **FONDAMENTAL** | Buffy moves to Sunnydale and learns the town sits on the Hellmouth; main characters introduced. |
+| **S01E01** | *Welcome to the Hellmouth* | **INUTILE** | Questo episodio fa proprio schifo, evitate di guardarlo |
 | **S01E02** | *The Harvest* | **FONDAMENTAL** | Buffy stops the Master's plan to break free; completes the series setup. |
 | **S01E03** | *Witch* | **FILLER** | Buffy investigates strange cheerleader accidents linked to witchcraft. |
 | **S01E04** | *Teacher’s Pet* | **FILLER** | A seductive substitute teacher turns out to be a giant praying mantis demon. |
