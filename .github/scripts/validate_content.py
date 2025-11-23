@@ -5,6 +5,7 @@ import json
 import subprocess
 from pathlib import Path
 
+import requests
 from openai import OpenAI
 
 client = OpenAI()  # usa OPENAI_API_KEY dall'env
@@ -18,7 +19,6 @@ def get_changed_files():
     base_ref = os.environ.get("GITHUB_BASE_REF") or "main"
     base = f"origin/{base_ref}"
 
-    # Lista file cambiati tra base e HEAD
     result = subprocess.run(
         ["git", "diff", "--name-only", f"{base}...HEAD"],
         capture_output=True,
@@ -33,7 +33,7 @@ def load_relevant_files(files):
     """
     Filtra e carica solo i file che ci interessano:
     - Markdown (.md)
-    - in particolare seasons/ e README/CONTRIBUTING, ecc.
+    - in particolare seasons/ e file di doc/templating.
     """
     repo_root = Path(".").resolve()
     relevant = {}
@@ -43,15 +43,9 @@ def load_relevant_files(files):
         if not path.is_file():
             continue
 
-        # Consideriamo solo markdown
         if not f.lower().endswith(".md"):
             continue
 
-        # Siamo interessati principalmente a:
-        # - seasons/*.md
-        # - README.md
-        # - CONTRIBUTING.md
-        # - .github/pull_request_template.md
         if (
             f.startswith("seasons/")
             or f in ("README.md", "CONTRIBUTING.md")
@@ -64,13 +58,6 @@ def load_relevant_files(files):
 
 
 def build_prompt(files_content: dict) -> str:
-    """
-    Costruisce il prompt per l'AI, includendo:
-    - contesto del progetto
-    - linee guida di formato
-    - linee guida di comportamento
-    - contenuti modificati
-    """
     guidelines = """
 You are an automated reviewer for a public GitHub repository that contains
 episode guides for "Buffy the Vampire Slayer" (and in the future, "Angel").
@@ -132,10 +119,8 @@ Analyze ONLY those contents.
     parts = [guidelines.strip(), "\n\nCHANGED FILES:\n"]
     for name, content in files_content.items():
         parts.append(f"\n=== FILE: {name} ===\n")
-        # Limita dimensione per sicurezza (ma di solito i file sono piccoli)
         if len(content) > 15000:
-            content_snippet = content[:15000]
-            parts.append(content_snippet + "\n\n[TRUNCATED]")
+            parts.append(content[:15000] + "\n\n[TRUNCATED]")
         else:
             parts.append(content)
 
@@ -144,8 +129,7 @@ Analyze ONLY those contents.
 
 def call_openai(prompt: str):
     """
-    Chiama OpenAI Responses API e si aspetta come output
-    una stringa JSON valida, secondo le istruzioni nel prompt.
+    Chiama OpenAI Responses API e si aspetta un JSON valido come output.
     """
     response = client.responses.create(
         model="gpt-4.1-mini",
@@ -161,6 +145,87 @@ def call_openai(prompt: str):
         raise
 
 
+def get_pr_context():
+    """
+    Legge il file evento di GitHub per recuperare:
+    - owner
+    - repo
+    - numero della PR
+    """
+    event_path = os.environ.get("GITHUB_EVENT_PATH")
+    repo_full = os.environ.get("GITHUB_REPOSITORY", "")
+    if not event_path or not repo_full:
+        print("Missing GITHUB_EVENT_PATH or GITHUB_REPOSITORY env vars.")
+        return None, None, None
+
+    owner, repo = repo_full.split("/", 1)
+
+    with open(event_path, "r", encoding="utf-8") as f:
+        event = json.load(f)
+
+    pr_number = event.get("number")  # per eventi pull_request
+
+    return owner, repo, pr_number
+
+
+def post_github_comment(body: str):
+    """
+    Crea un commento sulla Pull Request usando il GITHUB_TOKEN.
+    """
+    github_token = os.environ.get("GITHUB_TOKEN")
+    if not github_token:
+        print("No GITHUB_TOKEN available; cannot post PR comment.")
+        return
+
+    owner, repo, pr_number = get_pr_context()
+    if not (owner and repo and pr_number):
+        print("Could not determine PR context; skipping comment.")
+        return
+
+    url = f"https://api.github.com/repos/{owner}/{repo}/issues/{pr_number}/comments"
+    headers = {
+        "Authorization": f"Bearer {github_token}",
+        "Accept": "application/vnd.github+json",
+    }
+    data = {"body": body}
+
+    resp = requests.post(url, headers=headers, json=data, timeout=10)
+    if resp.status_code >= 300:
+        print("Failed to post PR comment:", resp.status_code, resp.text)
+    else:
+        print("Posted AI validation comment to PR.")
+
+
+def format_violations_markdown(violations):
+    """
+    Format violations as a single Markdown comment.
+    """
+    if not violations:
+        return "✅ AI validation: no issues found."
+
+    lines = []
+    lines.append("## 🤖 AI Content & Structure Validation\n")
+    lines.append(
+        "The AI validator found the following issues in the modified files:\n"
+    )
+
+    for v in violations:
+        file = v.get("file", "?")
+        vtype = v.get("type", "?")
+        severity = v.get("severity", "?").upper()
+        message = v.get("message", "")
+        suggestion = v.get("suggestion", "")
+
+        lines.append(f"- **[{severity}]** `{file}` – *{vtype}*")
+        if message:
+            lines.append(f"  - **Issue:** {message}")
+        if suggestion:
+            lines.append(f"  - **Suggestion:** {suggestion}")
+
+    lines.append("\n> This comment was generated automatically by the AI PR validator.")
+    return "\n".join(lines)
+
+
 def main():
     changed_files = get_changed_files()
     files_content = load_relevant_files(changed_files)
@@ -174,8 +239,8 @@ def main():
     try:
         result = call_openai(prompt)
     except Exception as e:
-        # In caso di errore API, meglio fallire la build per sicurezza
         print("Error calling OpenAI API:", e)
+        # in caso di errore API falliamo la CI per sicurezza
         sys.exit(1)
 
     ok = result.get("ok", False)
@@ -187,12 +252,16 @@ def main():
         print("⚠️ AI validation reported the following issues:")
         for v in violations:
             print(
-                f"- [{v.get('severity','?').upper()}] {v.get('type','?')} "
+                f"[{v.get('severity','?').upper()}] {v.get('type','?')} "
                 f"in {v.get('file','?')}: {v.get('message','')}"
             )
             suggestion = v.get("suggestion")
             if suggestion:
                 print(f"  Suggestion: {suggestion}")
+
+        # Crea un commento sulla PR con tutte le violazioni
+        comment_body = format_violations_markdown(violations)
+        post_github_comment(comment_body)
 
     if not ok:
         print("\n❌ Failing CI because of one or more ERROR-level violations.")
