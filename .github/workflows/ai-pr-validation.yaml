@@ -1,0 +1,35 @@
+name: AI PR Validation
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, edited]
+
+jobs:
+  ai-validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # ci serve la history per fare il diff
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai
+
+      - name: Run AI content validation
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_APIKEY }}
+          GITHUB_BASE_REF: ${{ github.base_ref }}
+        run: |
+          python .github/scripts/validate_content.py
