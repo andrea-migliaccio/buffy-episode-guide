@@ -21,6 +21,8 @@ Some episodes categorized as *IMPORTANT*, *DISPENSABLE*, or even *FILLER* are st
 
 The classification reflects **continuity and relevance to the overarching story**, not artistic or emotional value.
 
+To bridge the gap between “importance” and “what actually happens” in these episodes, the guide includes a **Key Story Notes** column. This field summarizes any important characters, lore, or events that might matter later, even if the episode itself is considered skippable for a streamlined watch.
+
 For example:
 - **S04E10 — “Hush”**, one of the most acclaimed and innovative episodes of the entire series, is not strictly *FONDAMENTAL* to the primary plot arc, yet it remains a fan favorite and a standout of the medium.
 
@@ -66,6 +68,13 @@ Once Buffy’s documentation is complete, a parallel section will be added for t
     - Title
     - Importance level
     - Short description
+    - `Key Story Notes` – A richer field that highlights any important elements for long-term continuity, such as:
+    - character introductions that matter later  
+    - world-building or lore that returns in future seasons  
+    - relationships or decisions referenced later  
+    - callbacks or prophecy elements fulfilled in later episodes  
+
+This last column is meant to help viewers who **skip filler/dispensable episodes** still understand who people are and how certain plot points came to be.
 
 ### 🔮 Future Expansion: *Angel* (the spin-off series)
 
@@ -93,6 +102,11 @@ Below are the essential guidelines — for full details, please refer to
 - Episode descriptions must remain **short** (1–2 lines).  
 - Use only the four approved importance levels:
   - `FONDAMENTAL`, `IMPORTANT`, `DISPENSABLE`, `FILLER`
+- Use the **Key Story Notes** column to capture:
+  - character introductions  
+  - lore, world-building, prophecies  
+  - relationship developments  
+  - callbacks that will matter in later episodes
 - Keep wording neutral and avoid subjective judgments.
 - No insults, hate speech, or irrelevant content.
 
