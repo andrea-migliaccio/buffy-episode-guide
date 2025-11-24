@@ -116,7 +116,7 @@ Because importance ratings can be subjective:
 
 - Such PRs require **discussion** and at least **two approvals**.  
 - A justification must be included in the PR description.  
-- (Future) An AI-based workflow will help validate respectful, on-topic proposals.
+- An AI-based workflow will help validate respectful, on-topic proposals.
 
 ### 3. Opening a Pull Request
 
