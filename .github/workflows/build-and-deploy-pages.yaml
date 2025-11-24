@@ -3,6 +3,8 @@ name: Build & Deploy Buffy Guide to GitHub Pages
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'seasons/**'
   workflow_dispatch:
 
 permissions:
