@@ -1,4 +1,4 @@
-# 📚 Buffy the Vampire Slayer – Episode Guide
+# Buffy the Vampire Slayer – Episode Importance Guide
 
 Welcome to a comprehensive, continuity-focused guide to **Buffy the Vampire Slayer**.  
 This project is designed to help both new viewers and longtime fans navigate the series with clarity — especially if you prefer a *selective watch* rather than viewing all 144 episodes.
