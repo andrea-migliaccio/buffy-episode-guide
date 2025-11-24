@@ -62,3 +62,25 @@ Use the links below to explore each season’s guide:
 Because this guide focuses on continuity, the **Key Story Notes** column may reference characters or events that appear later in the series.  
 If you are a first-time viewer and wish to avoid spoilers, proceed carefully.
 
+---
+
+## 🤝 Community & Contributions
+
+This project reflects a curated interpretation of the Buffyverse, but many elements —  
+such as episode importance, continuity interpretations, and story relevance — are naturally **subjective**.
+
+For this reason, **contributions from the community are warmly welcomed**.
+
+The project is fully **open source**, and you can help improve it by:
+- refining descriptions  
+- adding or correcting continuity notes  
+- discussing episode importance  
+- improving structure and accuracy  
+
+🔗 **Project repository:**  
+https://github.com/andrea-migliaccio/buffy-episode-guide
+
+🛠 **How to contribute:**  
+See the guidelines here:  
+https://github.com/andrea-migliaccio/buffy-episode-guide/blob/main/CONTRIBUTING.md
+
