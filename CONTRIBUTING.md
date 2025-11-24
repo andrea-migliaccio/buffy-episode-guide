@@ -92,21 +92,56 @@ This ensures classification changes remain collaborative and community-driven.
 ## 🧩 Formatting Rules
 
 ### Season Files
-Each season references:
-- A brief overview of the main arcs
-- A Markdown table with:
-  - Episode code  
-  - Title  
-  - Importance level  
-  - Short description (1–2 lines)
+
+Each season file should contain:
+
+- A brief overview of the main arcs (1–3 short paragraphs).
+- A Markdown table with the following columns:
+
+  | Code | Title | Importance | Description | Key Story Notes |
+
+  - **Code** – Episode code (e.g., `S03E14`)  
+  - **Title** – Episode title  
+  - **Importance** – One of:
+    - `FONDAMENTAL`
+    - `IMPORTANT`
+    - `DISPENSABLE`
+    - `FILLER`
+  - **Description** – A short (1–2 lines), neutral summary of the episode.  
+  - **Key Story Notes** – A richer field used to capture anything that matters for long-term continuity, such as:
+    - introduction of recurring or important characters  
+    - lore, world-building, and prophecies that return later  
+    - relationship developments and emotional turning points  
+    - events that are referenced again in future seasons  
+
+This column can be **longer than the description** and may mention connections to later episodes (e.g. *“This becomes relevant again in S02E17”*).
+
 
 Table columns must remain consistent across seasons.
 
 ### Descriptions
-- Keep them concise and neutral.  
-- Focus on **plot relevance**, not subjective opinions.  
-- Avoid spoilers beyond the episode itself when possible.  
-- No personal commentary (e.g., “this episode is boring/great”).  
+
+- Keep them concise and neutral (1–2 lines).  
+- Focus on what happens in the episode, not whether it is “good” or “bad”.  
+- Avoid spoilers that go far beyond the episode itself.  
+- No personal commentary (e.g., “this episode is boring/great”).
+
+### Key Story Notes
+
+The **Key Story Notes** column is designed to help viewers who skip non-essential episodes still understand:
+
+- who key characters are and where they came from  
+- why certain relationships exist or evolve in a given way  
+- how prophecies, artifacts, or lore threads were first introduced  
+- which events will later be referenced as part of character development or world-building  
+
+Guidelines:
+
+- It’s acceptable for this field to be **more detailed (3–5 lines)** if needed.  
+- You may reference future episodes explicitly (e.g., *“This detail is referenced again in S05E13”*).  
+- Keep the tone factual and respectful; no subjective reviews.  
+- Focus on information that matters for understanding future plot points or emotional beats.
+
 
 ### Metadata and Structure
 - Do not rename files without good reason.  

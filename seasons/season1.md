@@ -15,18 +15,19 @@ Season 1 is short (mid-season replacement) and heavily focused on setting up the
 
 ## Episode List
 
-| Code | Title | Importance | Description |
-|------|--------|------------|-------------|
-| **S01E01** | *Welcome to the Hellmouth* | **INUTILE** | Questo episodio fa proprio schifo, evitate di guardarlo |
-| **S01E02** | *The Harvest* | **FONDAMENTAL** | Buffy stops the Master's plan to break free; completes the series setup. |
-| **S01E03** | *Witch* | **FILLER** | Buffy investigates strange cheerleader accidents linked to witchcraft. |
-| **S01E04** | *Teacher’s Pet* | **FILLER** | A seductive substitute teacher turns out to be a giant praying mantis demon. |
-| **S01E05** | *Never Kill a Boy on the First Date* | **DISPENSABLE** | Buffy tries to balance dating with Slayer duties; minor character development. |
-| **S01E06** | *The Pack* | **DISPENSABLE** | Students become possessed by hyena spirits; standalone plot with slight Xander development. |
-| **S01E07** | *Angel* | **FONDAMENTAL** | Angel’s secret is revealed: he’s a vampire cursed with a soul; Buffy/Angel arc begins. |
-| **S01E08** | *I, Robot… You, Jane* | **FILLER** | Willow falls for a boy online who is actually a demon trapped in the internet. |
-| **S01E09** | *The Puppet Show* | **FILLER** | A ventriloquist’s dummy may be a murderer—or something else entirely. |
-| **S01E10** | *Nightmares* | **DISPENSABLE** | Students' nightmares become real; thematic but not impactful to the main storyline. |
-| **S01E11** | *Out of Mind, Out of Sight* | **DISPENSABLE** | A girl becomes invisible due to social neglect; tiny early reference to government groups. |
-| **S01E12** | *Prophecy Girl* | **FONDAMENTAL** | Buffy confronts a prophecy foretelling her death; major battle with the Master closes the season. |
+| Code | Title | Importance | Description | Key Story Notes |
+|------|--------|------------|-------------|-----------------|
+| **S01E01** | *Welcome to the Hellmouth* | **FONDAMENTAL** | Buffy moves to Sunnydale and learns the town sits on the Hellmouth; main characters introduced. | Introduces the full Sunnydale setting; Buffy meets Giles, Willow, Xander, Cordelia, and encounters signs of the Master’s activity. |
+| **S01E02** | *The Harvest* | **FONDAMENTAL** | Buffy stops the Master's plan to break free; completes the series setup. | First mention of the *Book of Aurelius* prophecy about **The Anointed One**, who will “lead the Slayer into Hell.” Sets up the Season 1 prophecy arc. |
+| **S01E03** | *Witch* | **FILLER** | Buffy investigates strange cheerleader accidents linked to witchcraft. |  |
+| **S01E04** | *Teacher’s Pet* | **FILLER** | A seductive substitute teacher turns out to be a giant praying mantis demon. |  |
+| **S01E05** | *Never Kill a Boy on the First Date* | **DISPENSABLE** | Buffy tries to balance dating with Slayer duties; minor character development. | **First real appearance of The Anointed One** (Andrew). The child survivor of a bus crash is turned into a vampire and becomes the prophetic figure destined to lure Buffy to her death in *Prophecy Girl*. Important mythological seed even if the episode is otherwise skippable. |
+| **S01E06** | *The Pack* | **DISPENSABLE** | Students become possessed by hyena spirits; standalone plot with slight Xander development. |  |
+| **S01E07** | *Angel* | **FONDAMENTAL** | Angel’s secret is revealed: he’s a vampire cursed with a soul; Buffy/Angel arc begins. | Develops the Master’s circle of minions, including the presence of **The Anointed One**, who is now actively involved in the Master’s plans. |
+| **S01E08** | *I, Robot… You, Jane* | **FILLER** | Willow falls for a boy online who is actually a demon trapped in the internet. | **First appearance of Jenny Calendar** — the technopagan computer science teacher. She begins her dynamic with Giles, demonstrates awareness of the occult, and becomes a recurring major character (especially in Season 2). |
+| **S01E09** | *The Puppet Show* | **FILLER** | A ventriloquist’s dummy may be a murderer—or something else entirely. | Introduces Principal Snyder, who becomes a recurring antagonist throughout seasons 1–3. |
+| **S01E10** | *Nightmares* | **DISPENSABLE** | Students' nightmares become real; thematic but not impactful to the main storyline. | Reappearance of Jenny Calendar, whose earlier intro in E08 is important. Buffy confronts fears later referenced symbolically in future arcs. |
+| **S01E11** | *Out of Mind, Out of Sight* | **DISPENSABLE** | A girl becomes invisible due to social neglect; tiny early reference to government groups. |  |
+| **S01E12** | *Prophecy Girl* | **FONDAMENTAL** | Buffy confronts a prophecy foretelling her death; major battle with the Master closes the season. | **The Anointed One fulfills his prophetic purpose** by guiding Buffy into the Master’s trap. Concludes all prophecy threads introduced in E02 and E05. |
+
 

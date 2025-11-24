@@ -69,21 +69,25 @@ checking for BOTH:
    - Season files are Markdown with:
      - A short overview section.
      - An episode table with columns:
-       | Code | Title | Importance | Description |
+       | Code | Title | Importance | Description | Key Story Notes |
    - The "Importance" column MUST use ONLY:
      - FONDAMENTAL
      - IMPORTANT
      - DISPENSABLE
      - FILLER
-   - Descriptions should be short (1–2 lines).
-   - No obviously broken tables (missing pipes, header/rows mismatch, etc).
+   - "Description" should be short (about 1–2 lines).
+   - "Key Story Notes" can be longer (up to a few lines) and is used to
+     capture continuity-relevant information (character introductions,
+     lore, future callbacks, relationship developments, etc.).
+   - No obviously broken tables (e.g., missing pipes, badly malformed headers).
 
 2) CONTENT & CODE OF CONDUCT
    - No insults, hate speech, personal attacks or toxicity.
    - No off-topic content (e.g. spam, self-promotion, ads, unrelated rants).
    - No explicit sexual content or slurs.
-   - Tone should be neutral and descriptive, not a subjective review.
-   - Descriptions should focus on plot, continuity relevance, and main themes.
+   - Tone should be neutral and descriptive, not a subjective review of episode quality.
+   - Descriptions and Key Story Notes should focus on plot, continuity relevance,
+     and main themes — not whether the episode is "good" or "bad."
 
 You are NOT judging whether episodes are good or bad; you only enforce structure
 and respectful, relevant content.
@@ -111,6 +115,7 @@ Rules for ok:
 Be strict about:
 - Importance values being in the allowed set.
 - Obvious disrespectful or off-topic content.
+- Misuse of Key Story Notes as a place for rants or subjective reviews.
 
 Now you will receive a list of files and their full updated contents.
 Analyze ONLY those contents.
