@@ -78,9 +78,9 @@ The project is fully **open source**, and you can help improve it by:
 - improving structure and accuracy  
 
 🔗 **Project repository:**  
-https://github.com/andrea-migliaccio/buffy-episode-guide
+[https://github.com/andrea-migliaccio/buffy-episode-guide](https://github.com/andrea-migliaccio/buffy-episode-guide)
 
 🛠 **How to contribute:**  
 See the guidelines here:  
-https://github.com/andrea-migliaccio/buffy-episode-guide/blob/main/CONTRIBUTING.md
+[https://github.com/andrea-migliaccio/buffy-episode-guide/blob/main/CONTRIBUTING.md](https://github.com/andrea-migliaccio/buffy-episode-guide/blob/main/CONTRIBUTING.md)
 
